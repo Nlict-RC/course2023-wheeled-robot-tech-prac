@@ -191,7 +191,6 @@ class Playground:
 if __name__ == "__main__":
     planner = None
     # planner = AStarPlanner(0.2,Playground.planning_obs_radius+DWAConfig.robot_radius)
-    # vplanner = DWA()
     # planner = RRTPlanner(0.2,1.5)
     pg = Playground(planner)
     pg.run()

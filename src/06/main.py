@@ -88,7 +88,7 @@ class Playground:
             self.vplanner_midpos_index = self.check_path()
             if self.vplanner_midpos_index >= 0:
                 midpos = self.planning_path[self.vplanner_midpos_index]
-                self.vx,self.vw = self.vplanner.plan([self.x,self.y,self.theta,self.vx,self.vw],self.dwaconfig,midpos,self.planning_obs)
+                self.vx,self.vw = dwa.plan([self.x,self.y,self.theta,self.vx,self.vw],self.dwaconfig,midpos,self.planning_obs)
             else:
                 self.vx,self.vw = 0.0,0.0
             

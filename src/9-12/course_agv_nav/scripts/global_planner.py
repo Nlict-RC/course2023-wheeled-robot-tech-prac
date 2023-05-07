@@ -58,8 +58,8 @@ class GlobalPlanner:
 
     def replan(self,req):
         print('get request for replan!!!!!!!!')
-        self.initPlanner()
         self.updateGlobalPose()
+        self.initPlanner()
         ## TODO get planner result
         ## e.g. self.plan_rx,self.plan_ry = self.planner.planning(self.plan_sx,self.plan_sy,self.plan_gx,self.plan_gy)
         
@@ -98,8 +98,10 @@ class GlobalPlanner:
             pose.header.seq = i
             pose.header.stamp = rospy.Time(0)
             pose.header.frame_id = 'map'
-            pose.pose.position.x = self.plan_rx[len(self.plan_rx)-1-i]
-            pose.pose.position.y = self.plan_ry[len(self.plan_rx)-1-i]
+            # pose.pose.position.x = self.plan_rx[len(self.plan_rx)-1-i]
+            # pose.pose.position.y = self.plan_ry[len(self.plan_rx)-1-i]
+            pose.pose.position.x = self.plan_rx[i]
+            pose.pose.position.y = self.plan_ry[i]
             pose.pose.position.z = 0.01
             pose.pose.orientation.x = 0
             pose.pose.orientation.y = 0

@@ -196,8 +196,8 @@ class LocalPlanner:
     def planOnce(self):
         self.updateGlobalPose()
         # Update plan_x [x(m), y(m), yaw(rad), v(m/s), omega(rad/s)]
-        #self.plan_x = [self.x,self.y,self.yaw, self.vx, self.vw]
-        self.plan_x = np.array([0.0, 0.0, 0.0, self.vx, self.vw])
+        self.plan_x = [self.x,self.y,self.yaw, self.vx, self.vw]
+        #self.plan_x = np.array([0.0, 0.0, 0.0, self.vx, self.vw])
         # Update obstacle
         self.updateObstacle()
         u = self.dwa.plan(self.plan_x, self.plan_goal, self.plan_ob)
